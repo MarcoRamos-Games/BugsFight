@@ -108,6 +108,11 @@ MonoBehaviour:
   - {fileID: 857779327251732012, guid: f9f0970cb9c306446afcd6e791042d20, type: 3}
   - {fileID: 3825752689756085014, guid: f9f0970cb9c306446afcd6e791042d20, type: 3}
   hoverAmount: 0.1
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  highlightedColor: {r: 0.042452812, g: 0.2143614, b: 1, a: 0.69411767}
+  isWalkable: 0
 --- !u!61 &212820990
 BoxCollider2D:
   m_ObjectHideFlags: 0
