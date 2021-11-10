@@ -6,6 +6,10 @@ public class GameMaster : MonoBehaviour
 {
     public Unit selectedUnit;
 
+    public int playerTurn = 1;
+
+    public GameObject selectedUnitSquare;
+
     public void ResetTiles()
     {
         foreach(Tile tile in FindObjectsOfType<Tile>())
@@ -13,15 +17,46 @@ public class GameMaster : MonoBehaviour
             tile.Reset();
         }
     }
-    // Start is called before the first frame update
-    void Start()
+
+
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            EndTurn();
+        }
+
+        if(selectedUnit != null)
+        {
+            selectedUnitSquare.SetActive(true);
+            selectedUnitSquare.transform.position = new Vector2( selectedUnit.transform.position.x, selectedUnit.transform.position.y);
+        }
+        else
+        {
+            selectedUnitSquare.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void EndTurn()
     {
-        
+        if(playerTurn == 1)
+        {
+            playerTurn = 2;
+        }
+        else if(playerTurn ==2)
+        {
+            playerTurn = 1;
+        }
+
+        if(selectedUnit != null)
+        {
+            selectedUnit.selected = false;
+            selectedUnit = null;
+        }
+        ResetTiles();
+        foreach(Unit unit in FindObjectsOfType<Unit>())
+        {
+            unit.hasMoved = false;
+        }
     }
 }

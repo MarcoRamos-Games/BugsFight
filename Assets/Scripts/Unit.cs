@@ -12,6 +12,8 @@ public class Unit : MonoBehaviour
     public bool hasMoved;
     public float moveSpeed;
 
+    public int playerNumber;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class Unit : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(selected == true)
+        if (selected == true)
         {
             selected = false;
             gm.selectedUnit = null;
@@ -28,14 +30,17 @@ public class Unit : MonoBehaviour
         }
         else
         {
-            if(gm.selectedUnit != null)
+            if (playerNumber == gm.playerTurn)
             {
-                gm.selectedUnit.selected = false;
+                if (gm.selectedUnit != null)
+                {
+                    gm.selectedUnit.selected = false;
+                }
+                selected = true;
+                gm.selectedUnit = this;
+                gm.ResetTiles();
+                GetWalkableTiles();
             }
-            selected = true;
-            gm.selectedUnit = this;
-            gm.ResetTiles();
-            GetWalkableTiles();
         }
     }
 
@@ -67,13 +72,13 @@ public class Unit : MonoBehaviour
     {
         while(transform.position.x != tilePos.x)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector2(tilePos.x, transform.position.y), moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(tilePos.x, transform.position.y, transform.position.z), moveSpeed * Time.deltaTime);
             yield return null;         
         }
 
         while (transform.position.y != tilePos.y)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector2(transform.position.x, tilePos.y), moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, tilePos.y, transform.position.z), moveSpeed * Time.deltaTime);
             yield return null;
         }
 
