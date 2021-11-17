@@ -17,6 +17,12 @@ public class GameMaster : MonoBehaviour
 
     public Text player1GoldText, player2GoldText;
 
+    public ShopItem purchasedItem;
+    private void Start()
+    {
+        GetGoldIncome(1);
+    }
+
     public void UpdateGoldText()
     {
         player1GoldText.text = player1Gold.ToString();
@@ -31,6 +37,25 @@ public class GameMaster : MonoBehaviour
         }
     }
 
+    void GetGoldIncome(int playerTurn)
+    {
+        foreach(Castle castle in FindObjectsOfType<Castle>())
+        {
+            if(castle.playerNumber == playerTurn)
+            {
+                if(playerTurn == 1)
+                {
+                    player1Gold += castle.goldPerTurn;
+                }
+                else
+                {
+                    player2Gold += castle.goldPerTurn;
+                }              
+                
+            }
+        }
+        UpdateGoldText();
+    }
 
     private void Update()
     {
@@ -63,6 +88,7 @@ public class GameMaster : MonoBehaviour
             playerIndicator.sprite = player1Indicator;
         }
 
+        GetGoldIncome(playerTurn);
         if(selectedUnit != null)
         {
             selectedUnit.selected = false;
@@ -75,5 +101,6 @@ public class GameMaster : MonoBehaviour
             unit.weaponIcon.SetActive(false);
             unit.hasAttacked = false;
         }
+        GetComponent<Shop>().CloseMenu();
     }
 }

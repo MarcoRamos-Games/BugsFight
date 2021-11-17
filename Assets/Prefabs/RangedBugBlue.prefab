@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2090197627558562961}
   - component: {fileID: 2090197627558562962}
   - component: {fileID: 7536641491945762716}
+  - component: {fileID: 2216655544818975182}
   m_Layer: 6
   m_Name: RangedBugBlue
   m_TagString: Untagged
@@ -48,7 +49,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 36.172546}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -59,7 +60,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.54, y: 673.94}
+  m_Size: {x: 1.54, y: 1.58}
   m_EdgeRadius: 0
 --- !u!114 &2090197627558562962
 MonoBehaviour:
@@ -85,8 +86,9 @@ MonoBehaviour:
   attackDamage: 3
   defenseDamage: 2
   armor: 1
-  bloodPrefab: {fileID: 6274378287200773491, guid: 855ae7d962ade4d4994a9f34e7ba0bbe, type: 3}
   damageIcon: {fileID: 5770691515006594098, guid: a440523d63dcdc5478d0ba8d4233b8e9, type: 3}
+  queenHealth: {fileID: 0}
+  isQueen: 0
 --- !u!114 &7536641491945762716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +102,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverAmount: 0.1
+--- !u!114 &2216655544818975182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090197627558562963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf575af7b2915e43aa222cb91b55c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 70
 --- !u!114 &7441840417800085235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,13 +151,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8743227109800288424}
-  m_LocalRotation: {x: 0.58869296, y: 0.013355215, z: -0.01919425, w: 0.8080185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.03, y: 0.91, z: -0.09}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2090197627558562966}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 72.15, y: -0.19, z: -2.86}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2738477475632303090
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -211,19 +226,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c28a69dc755f63e41bcb6f7f8b984ad1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.21
+      value: -0.3800006
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c28a69dc755f63e41bcb6f7f8b984ad1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c28a69dc755f63e41bcb6f7f8b984ad1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c28a69dc755f63e41bcb6f7f8b984ad1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c28a69dc755f63e41bcb6f7f8b984ad1, type: 3}
       propertyPath: m_LocalRotation.y
@@ -235,7 +250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c28a69dc755f63e41bcb6f7f8b984ad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c28a69dc755f63e41bcb6f7f8b984ad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y

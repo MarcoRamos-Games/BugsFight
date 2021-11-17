@@ -14,6 +14,8 @@ public class Tile : MonoBehaviour
     public Color highlightedColor;
     public bool isWalkable;
 
+    public Color creatableColor;
+    public bool isCreatable;
     GameMaster gm;
 
     // Start is called before the first frame update
@@ -59,6 +61,13 @@ public class Tile : MonoBehaviour
     {
         rend.color = Color.white;
         isWalkable = false;
+        isCreatable = false;
+    }
+
+    public void SetCreatable()
+    {
+        rend.color = creatableColor;
+        isCreatable = true;
     }
 
     private void OnMouseDown()
@@ -66,6 +75,17 @@ public class Tile : MonoBehaviour
         if(isWalkable && gm.selectedUnit != null)
         {
             gm.selectedUnit.Move(this.transform.position);
+        }
+        else if(isCreatable == true)
+        {
+            ShopItem item = Instantiate(gm.purchasedItem, new Vector3(transform.position.x, transform.position.y, transform.position.z -.35f), transform.rotation); //* Quaternion.Euler(0, 0, 0));
+            gm.ResetTiles();
+            Unit unit = item.GetComponent<Unit>();
+            if(unit != null)
+            {
+                unit.hasMoved = true;
+                unit.hasAttacked = true;
+            }
         }
     }
 }

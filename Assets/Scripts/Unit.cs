@@ -36,13 +36,13 @@ public class Unit : MonoBehaviour
     void Start()
     {
         unitBody = GetComponentInChildren<Body>();
-        if(transform.position.x >= 0)
+        if(playerNumber == 2)
         {
             unitBody.transform.Rotate(0, -90, 0);
 
 
         }
-        else if(transform.position.x <0)
+        else if(playerNumber ==1)
         {
             unitBody.transform.Rotate(0, 90, 0);
          
