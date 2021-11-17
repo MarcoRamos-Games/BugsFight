@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
@@ -9,6 +10,18 @@ public class GameMaster : MonoBehaviour
     public int playerTurn = 1;
 
     public GameObject selectedUnitSquare;
+    public Image playerIndicator;
+    public Sprite player1Indicator, player2Indicator;
+
+    public int player1Gold =100, player2Gold =100;
+
+    public Text player1GoldText, player2GoldText;
+
+    public void UpdateGoldText()
+    {
+        player1GoldText.text = player1Gold.ToString();
+        player2GoldText.text = player2Gold.ToString();
+    }
 
     public void ResetTiles()
     {
@@ -42,10 +55,12 @@ public class GameMaster : MonoBehaviour
         if(playerTurn == 1)
         {
             playerTurn = 2;
+            playerIndicator.sprite = player2Indicator;
         }
         else if(playerTurn ==2)
         {
             playerTurn = 1;
+            playerIndicator.sprite = player1Indicator;
         }
 
         if(selectedUnit != null)

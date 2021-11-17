@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
@@ -25,7 +26,11 @@ public class Unit : MonoBehaviour
     public int defenseDamage;
     public int armor;
 
+    //public GameObject bloodPrefab;
     public DamageIcon damageIcon;
+
+    public Text queenHealth;
+    public bool isQueen;
 
     // Start is called before the first frame update
     void Start()
@@ -33,16 +38,26 @@ public class Unit : MonoBehaviour
         unitBody = GetComponentInChildren<Body>();
         if(transform.position.x >= 0)
         {
-            unitBody.transform.Rotate(0, 0, 0);
+            unitBody.transform.Rotate(0, -90, 0);
+
 
         }
         else if(transform.position.x <0)
         {
-            unitBody.transform.Rotate(0, 180, 0);
+            unitBody.transform.Rotate(0, 90, 0);
+         
         }
         gm = FindObjectOfType<GameMaster>();
+        UpdateQueenHealth();
     }
 
+    public void UpdateQueenHealth()
+    {
+        if (isQueen == true)
+        {
+            queenHealth.text = health.ToString();
+        }
+    }
     
     private void OnMouseDown()
     {
@@ -68,7 +83,7 @@ public class Unit : MonoBehaviour
                 GetWalkableTiles();
             }
         }
-        Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 10f);   
+        Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 30f);   
             Unit unit = col.GetComponent<Unit>();
 
             if (gm.selectedUnit != null)
@@ -82,21 +97,26 @@ public class Unit : MonoBehaviour
 
     private void Attack(Unit enemy)
     {
+        
         hasAttacked = true;
         int enemyDamage = attackDamage - enemy.armor;
         int myDamage = enemy.defenseDamage - armor;
         if (enemyDamage >= 1)
         {
-            DamageIcon instance = Instantiate(damageIcon, new Vector3(enemy.transform.position.x, enemy.transform.position.y, -.7f), Quaternion.identity);
+            DamageIcon instance = Instantiate(damageIcon, new Vector3(enemy.transform.position.x, enemy.transform.position.y-.3f, -1.5f), Quaternion.identity);
             instance.Setup(enemyDamage);
+            //Instantiate(bloodPrefab, new Vector3(enemy.transform.position.x, enemy.transform.position.y, -.7f), Quaternion.identity);
             enemy.health -= enemyDamage;
+            enemy.UpdateQueenHealth();
         }
 
         if(myDamage >= 1)
         {
-            DamageIcon instance = Instantiate(damageIcon, new Vector3(transform.position.x, transform.position.y, -.7f), Quaternion.identity);
+            DamageIcon instance = Instantiate(damageIcon, new Vector3(transform.position.x, transform.position.y - .3f, -1.5f), Quaternion.identity) ;
+            //Instantiate(bloodPrefab, new Vector3(transform.position.x, transform.position.y, -.7f), Quaternion.identity);
             instance.Setup(myDamage);
             health -= myDamage;
+            UpdateQueenHealth();
         }
 
         if(enemy.health <= 0)
@@ -108,9 +128,8 @@ public class Unit : MonoBehaviour
         if(health <= 0)
         {
             gm.ResetTiles();
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
-
     }
 
     private void GetWalkableTiles()
