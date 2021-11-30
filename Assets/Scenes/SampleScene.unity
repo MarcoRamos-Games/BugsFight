@@ -17651,10 +17651,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1470061679283174921, guid: a2a9a1ebd5923654c9245cc5fb82875e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8084317983425319474, guid: a2a9a1ebd5923654c9245cc5fb82875e, type: 3}
       propertyPath: m_Name
       value: RangedBugBlue (1)
@@ -18503,10 +18499,6 @@ PrefabInstance:
     - target: {fileID: 6916351432769911710, guid: 1ddca23265b9ad24aa668afbb1d0675b, type: 3}
       propertyPath: m_Name
       value: RangedBugRed (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9046412390076316568, guid: 1ddca23265b9ad24aa668afbb1d0675b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ddca23265b9ad24aa668afbb1d0675b, type: 3}

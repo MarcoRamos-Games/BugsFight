@@ -156,14 +156,32 @@ public class Unit : MonoBehaviour
             enemy.UpdateQueenHealth();
         }
 
-        if(myDamage >= 1)
+        if(transform.tag == "Ranged" && enemy.tag!= "Ranged")
         {
-            DamageIcon instance = Instantiate(damageIcon, new Vector3(transform.position.x, transform.position.y - .3f, -1.5f), Quaternion.identity) ;
-            //Instantiate(bloodPrefab, new Vector3(transform.position.x, transform.position.y, -.7f), Quaternion.identity);
-            instance.Setup(myDamage);
-            health -= myDamage;
-            UpdateQueenHealth();
+            if (Math.Abs(transform.position.x) + Math.Abs(transform.position.y - enemy.transform.position.y) <= 1)
+            {
+                if (myDamage >= 1)
+                {
+                    DamageIcon instance = Instantiate(damageIcon, new Vector3(transform.position.x, transform.position.y - .3f, -1.5f), Quaternion.identity);
+                    //Instantiate(bloodPrefab, new Vector3(transform.position.x, transform.position.y, -.7f), Quaternion.identity);
+                    instance.Setup(myDamage);
+                    health -= myDamage;
+                    UpdateQueenHealth();
+                }
+            }
         }
+        else
+        {
+            if (myDamage >= 1)
+            {
+                DamageIcon instance = Instantiate(damageIcon, new Vector3(transform.position.x, transform.position.y - .3f, -1.5f), Quaternion.identity);
+                //Instantiate(bloodPrefab, new Vector3(transform.position.x, transform.position.y, -.7f), Quaternion.identity);
+                instance.Setup(myDamage);
+                health -= myDamage;
+                UpdateQueenHealth();
+            }
+        }
+       
 
         if(enemy.health <= 0)
         {
