@@ -32,12 +32,14 @@ public class Unit : MonoBehaviour
     public Text queenHealth;
     public bool isQueen;
 
+    public GameObject explosionPrefab;
     Animator myAnimator;
-
+    AudioManager myAudioManager;
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
+        myAudioManager = FindObjectOfType<AudioManager>();
         unitBody = GetComponentInChildren<Body>();
         if(playerNumber == 2)
         {
@@ -53,7 +55,7 @@ public class Unit : MonoBehaviour
         gm = FindObjectOfType<GameMaster>();
         UpdateQueenHealth();
     }
-
+    
     public void UpdateQueenHealth()
     {
         if (isQueen == true)
@@ -61,42 +63,82 @@ public class Unit : MonoBehaviour
             queenHealth.text = health.ToString();
         }
     }
-    
-    private void OnMouseDown()
+
+    private void OnMouseOver()
     {
-        ResetWeaponIcons();
-        if (selected == true)
+        //if (Input.GetMouseButton(1))
+        //{
+        //    gm.ToggleStatsPanel(this);
+        //}
+        //gm.ToggleStatsPanel(this);
+    }
+
+    private void OnMouseEnter()
+    {
+        //if (Input.GetMouseButton(1))
+        //{
+        //    gm.ToggleStatsPanel(this);
+        //}
+        if (!gm.selectedUnit)
         {
-            selected = false;
-            gm.selectedUnit = null;
-            gm.ResetTiles();
+            gm.ToggleStatsPanel(this);
         }
         else
         {
-            if (playerNumber == gm.playerTurn)
-            {
-                if (gm.selectedUnit != null)
-                {
-                    gm.selectedUnit.selected = false;
-                }
-                selected = true;
-                gm.selectedUnit = this;
-                gm.ResetTiles();
-                GetEnemies();
-                GetWalkableTiles();
-            }
+            return;
         }
-        Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 30f);   
+    }
+
+    private void OnMouseExit()
+    {
+        if (!gm.selectedUnit)
+        {
+            gm.ToggleStatsPanel(this);
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        gm.RemoveStatsPanel(this);
+
+            ResetWeaponIcons();
+            if (selected == true)
+            {
+                selected = false;
+                gm.selectedUnit = null;
+                gm.ResetTiles();
+            }
+            else
+            {
+                if (playerNumber == gm.playerTurn)
+                {
+                    if (gm.selectedUnit != null)
+                    {
+                        gm.selectedUnit.selected = false;
+                    }
+                    selected = true;
+                    gm.selectedUnit = this;
+                    gm.ResetTiles();
+                    GetEnemies();
+                    GetWalkableTiles();
+                }
+            }
+            Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 30f);
             Unit unit = col.GetComponent<Unit>();
 
             if (gm.selectedUnit != null)
             {
                 if (gm.selectedUnit.enemiesInRange.Contains(unit) && gm.selectedUnit.hasAttacked == false)
-            {
-                StartCoroutine(ProcessAtack(unit));           
-                
+                {
+                    StartCoroutine(ProcessAtack(unit));
+
                 }
-            }       
+            }
+        
     }
 
     private void Attack(Unit enemy)
@@ -125,14 +167,28 @@ public class Unit : MonoBehaviour
 
         if(enemy.health <= 0)
         {
+            myAudioManager.PlaySFX(1);
             enemy.gameObject.SetActive(false);
+            Instantiate(explosionPrefab, new Vector3(enemy.transform.position.x, enemy.transform.position.y, -.7f), Quaternion.identity);
             GetWalkableTiles();
+            gm.RemoveStatsPanel(enemy);
         }
 
         if(health <= 0)
         {
             gm.ResetTiles();
+            gm.RemoveStatsPanel(this);
             gameObject.SetActive(false);
+            myAudioManager.PlaySFX(1);
+            Instantiate(explosionPrefab, new Vector3(enemy.transform.position.x, enemy.transform.position.y, -.7f), Quaternion.identity);
+            
+        }
+        gm.UpdateStatsPanel();
+        if (selected == true)
+        {
+            selected = false;
+            gm.selectedUnit = null;
+            gm.ResetTiles();
         }
     }
 
@@ -202,11 +258,13 @@ public class Unit : MonoBehaviour
         hasMoved = true;
         ResetWeaponIcons();
         GetEnemies();
+        gm.MoveStatsPanel(this);
     }
 
     IEnumerator ProcessAtack(Unit unit)
     {
         gm.selectedUnit.myAnimator.SetTrigger("Attack");
+        myAudioManager.PlaySFX(2);
         yield return new WaitForSeconds(1f);
         gm.selectedUnit.Attack(unit);
     }

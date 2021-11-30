@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,9 +19,66 @@ public class GameMaster : MonoBehaviour
     public Text player1GoldText, player2GoldText;
 
     public ShopItem purchasedItem;
+
+    AudioManager myAudioManager;
+
+    public GameObject statsPanel;
+    public Vector3 statsPanelShift;
+    public Unit viewedUnit;
+
+    public Text healthText;
+    public Text armorText;
+    public Text attackDamageText;
+    public Text defenseDamageText;
+
     private void Start()
     {
         GetGoldIncome(1);
+        myAudioManager = FindObjectOfType<AudioManager>();
+    }
+
+    public void ToggleStatsPanel(Unit unit)
+    {
+        if(unit.Equals(viewedUnit) == false)
+        {
+            statsPanel.SetActive(true);
+            statsPanel.transform.position = (Vector3)unit.transform.position + statsPanelShift;
+            viewedUnit = unit;
+            UpdateStatsPanel();
+        }
+        else
+        {
+            statsPanel.SetActive(false);
+            viewedUnit = null;
+        }
+    }
+
+    public void UpdateStatsPanel()
+    {
+        if(viewedUnit != null)
+        {
+            healthText.text = viewedUnit.health.ToString();
+            armorText.text = viewedUnit.armor.ToString();
+            attackDamageText.text = viewedUnit.attackDamage.ToString();
+            defenseDamageText.text = viewedUnit.defenseDamage.ToString();
+
+        }
+    }
+
+    public void MoveStatsPanel(Unit unit)
+    {
+        if (unit.Equals(viewedUnit))
+        {
+            statsPanel.transform.position = (Vector3)unit.transform.position + statsPanelShift;
+        }
+    }
+
+    public void RemoveStatsPanel(Unit unit)
+    {
+        if (unit.Equals(viewedUnit))
+        {
+            statsPanel.SetActive(false);
+        }
     }
 
     public void UpdateGoldText()
@@ -61,7 +119,10 @@ public class GameMaster : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            myAudioManager.PlaySFX(0);
             EndTurn();
+            
+            
         }
 
         if(selectedUnit != null)

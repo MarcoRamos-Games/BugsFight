@@ -1,17 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1422847581104974982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2269692748380799678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c76bcf2e65398c44bfa530272075b6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1470061679283174921
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470061679283174921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 0.91, z: -0.09}
+  m_LocalPosition: {x: -0.03, y: -0.139, z: -1.379}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 8084317983425319479}
@@ -83,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 30044d80b9428af48b032e879965c4c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 147021f983b305441ac7f937c6ac95de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,6 +82,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1422847581104974982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2269692748380799678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c76bcf2e65398c44bfa530272075b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8084317983425319474
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +184,7 @@ MonoBehaviour:
   damageIcon: {fileID: 5770691515006594098, guid: a440523d63dcdc5478d0ba8d4233b8e9, type: 3}
   queenHealth: {fileID: 0}
   isQueen: 0
+  explosionPrefab: {fileID: 6274378287200773491, guid: 855ae7d962ade4d4994a9f34e7ba0bbe, type: 3}
 --- !u!114 &407325579722223933
 MonoBehaviour:
   m_ObjectHideFlags: 0

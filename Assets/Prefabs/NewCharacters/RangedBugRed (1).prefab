@@ -90,6 +90,7 @@ MonoBehaviour:
   damageIcon: {fileID: 5770691515006594098, guid: a440523d63dcdc5478d0ba8d4233b8e9, type: 3}
   queenHealth: {fileID: 0}
   isQueen: 0
+  explosionPrefab: {fileID: 6274378287200773491, guid: 855ae7d962ade4d4994a9f34e7ba0bbe, type: 3}
 --- !u!114 &4841243476548027060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9046412390076316568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 0.91, z: -0.09}
+  m_LocalPosition: {x: -0.03, y: -0.13899958, z: -1.379}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 6916351432769911707}
@@ -218,7 +219,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 30044d80b9428af48b032e879965c4c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 147021f983b305441ac7f937c6ac95de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
