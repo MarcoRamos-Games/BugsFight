@@ -1,0 +1,576 @@
+fileFormatVersion: 2
+guid: 584f8234c1505324eb4da4b1c9ed3e15
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8464691588155174270
+    second: archivos-para-png_0
+  - first:
+      213: 8285866583219323466
+    second: archivos-para-png_1
+  - first:
+      213: -1262467104255755802
+    second: archivos-para-png_2
+  - first:
+      213: -9048769677075717205
+    second: archivos-para-png_3
+  - first:
+      213: -5118809414357224959
+    second: archivos-para-png_4
+  - first:
+      213: 350289593150265998
+    second: archivos-para-png_5
+  - first:
+      213: -1541656225367367348
+    second: archivos-para-png_6
+  - first:
+      213: 1132314294463360715
+    second: archivos-para-png_7
+  - first:
+      213: -4840349958846348194
+    second: archivos-para-png_8
+  - first:
+      213: -8415316053263195013
+    second: archivos-para-png_9
+  - first:
+      213: -3358889627306118836
+    second: archivos-para-png_10
+  - first:
+      213: 4757785403986949917
+    second: archivos-para-png_11
+  - first:
+      213: 5704782976792432353
+    second: archivos-para-png_12
+  - first:
+      213: 80183592366504585
+    second: archivos-para-png_13
+  - first:
+      213: 1643478166056673762
+    second: archivos-para-png_14
+  - first:
+      213: -4643207199648356869
+    second: archivos-para-png_15
+  - first:
+      213: -4119177171789868454
+    second: archivos-para-png_16
+  - first:
+      213: -2815364820487958866
+    second: archivos-para-png_17
+  - first:
+      213: -467745462828655943
+    second: archivos-para-png_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: archivos-para-png_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 859
+        width: 235
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28216c239df578a80800000000000000
+      internalID: -8464691588155174270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_1
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 967
+        width: 79
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a42411dc1cf4df270800000000000000
+      internalID: 8285866583219323466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_2
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 970
+        width: 767
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e938368bd0da7ee0800000000000000
+      internalID: -1262467104255755802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_3
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 967
+        width: 79
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba3639fcbef4c6280800000000000000
+      internalID: -9048769677075717205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_4
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 851
+        width: 319
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102ff4055f556f8b0800000000000000
+      internalID: -5118809414357224959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_5
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 872
+        width: 78
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8adc30778a7cd400800000000000000
+      internalID: 350289593150265998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_6
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 750
+        width: 812
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c416531c4dfea9ae0800000000000000
+      internalID: -1541656225367367348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_7
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 872
+        width: 78
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcee59ff9d9c6bf00800000000000000
+      internalID: 1132314294463360715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_8
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 429
+        width: 295
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5403629b5f93dcb0800000000000000
+      internalID: -4840349958846348194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_9
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 38
+        width: 365
+        height: 582
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74ea94c2aac63b80800000000000000
+      internalID: -8415316053263195013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_10
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 38
+        width: 365
+        height: 582
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41bcac1ea3d261d0800000000000000
+      internalID: -3358889627306118836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_11
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 356
+        width: 295
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d173e2afd9c070240800000000000000
+      internalID: 4757785403986949917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_12
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 282
+        width: 295
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee886464e57b2f40800000000000000
+      internalID: 5704782976792432353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_13
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 209
+        width: 295
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98af1db6d8edc1100800000000000000
+      internalID: 80183592366504585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_14
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 154
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e12beb3faecec610800000000000000
+      internalID: 1643478166056673762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_15
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 154
+        width: 7
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf56c6617a3009fb0800000000000000
+      internalID: -4643207199648356869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_16
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 154
+        width: 6
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a521194cf2eb5d6c0800000000000000
+      internalID: -4119177171789868454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_17
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 154
+        width: 6
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae0fa9bc90dde8d0800000000000000
+      internalID: -2815364820487958866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archivos-para-png_18
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 154
+        width: 7
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba1cc2dafb3289f0800000000000000
+      internalID: -467745462828655943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

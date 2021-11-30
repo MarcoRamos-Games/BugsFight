@@ -32,9 +32,12 @@ public class Unit : MonoBehaviour
     public Text queenHealth;
     public bool isQueen;
 
+    Animator myAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
+        myAnimator = GetComponent<Animator>();
         unitBody = GetComponentInChildren<Body>();
         if(playerNumber == 2)
         {
@@ -89,8 +92,9 @@ public class Unit : MonoBehaviour
             if (gm.selectedUnit != null)
             {
                 if (gm.selectedUnit.enemiesInRange.Contains(unit) && gm.selectedUnit.hasAttacked == false)
-                {
-                    gm.selectedUnit.Attack(unit);
+            {
+                StartCoroutine(ProcessAtack(unit));           
+                
                 }
             }       
     }
@@ -198,5 +202,12 @@ public class Unit : MonoBehaviour
         hasMoved = true;
         ResetWeaponIcons();
         GetEnemies();
+    }
+
+    IEnumerator ProcessAtack(Unit unit)
+    {
+        gm.selectedUnit.myAnimator.SetTrigger("Attack");
+        yield return new WaitForSeconds(1f);
+        gm.selectedUnit.Attack(unit);
     }
 }
