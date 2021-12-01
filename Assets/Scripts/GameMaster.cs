@@ -20,7 +20,6 @@ public class GameMaster : MonoBehaviour
 
     public ShopItem purchasedItem;
 
-    AudioManager myAudioManager;
 
     public GameObject statsPanel;
     public Vector3 statsPanelShift;
@@ -34,7 +33,7 @@ public class GameMaster : MonoBehaviour
     private void Start()
     {
         GetGoldIncome(1);
-        myAudioManager = FindObjectOfType<AudioManager>();
+        
     }
 
     public void ToggleStatsPanel(Unit unit)
@@ -119,7 +118,7 @@ public class GameMaster : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            myAudioManager.PlaySFX(0);
+            AudioManager.instance.PlaySFX(0);
             EndTurn();
             
             

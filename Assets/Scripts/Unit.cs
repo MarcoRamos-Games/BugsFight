@@ -34,7 +34,6 @@ public class Unit : MonoBehaviour
 
     public GameObject explosionPrefab;
     Animator myAnimator;
-    AudioManager myAudioManager;
 
     [SerializeField] GameObject victoryPanel;
     [SerializeField] GameObject buttons;
@@ -45,7 +44,6 @@ public class Unit : MonoBehaviour
     {
         camAnim = Camera.main.GetComponentInParent<Animator>();
         myAnimator = GetComponent<Animator>();
-        myAudioManager = FindObjectOfType<AudioManager>();
         unitBody = GetComponentInChildren<Body>();
         if(playerNumber == 2)
         {
@@ -197,7 +195,7 @@ public class Unit : MonoBehaviour
                 enemy.buttons.SetActive(true);
                 //Debug.Log("Working");
             }
-            myAudioManager.PlaySFX(1);
+            AudioManager.instance.PlaySFX(1);
             enemy.gameObject.SetActive(false);
             GameObject explosionPrefabGameObject =  Instantiate(explosionPrefab, new Vector3(enemy.transform.position.x, enemy.transform.position.y, -.7f), Quaternion.identity);
             Destroy(explosionPrefabGameObject, 1f);
@@ -210,7 +208,7 @@ public class Unit : MonoBehaviour
             gm.ResetTiles();
             gm.RemoveStatsPanel(this);
             gameObject.SetActive(false);
-            myAudioManager.PlaySFX(1);
+            AudioManager.instance.PlaySFX(1);
             GameObject explosionPrefabGameObject = Instantiate(explosionPrefab, new Vector3(enemy.transform.position.x, enemy.transform.position.y, -.7f), Quaternion.identity);
             Destroy(explosionPrefabGameObject, 1f);
 
@@ -296,7 +294,7 @@ public class Unit : MonoBehaviour
     IEnumerator ProcessAtack(Unit unit)
     {
         gm.selectedUnit.myAnimator.SetTrigger("Attack");
-        myAudioManager.PlaySFX(2);
+        AudioManager.instance.PlaySFX(2);
         yield return new WaitForSeconds(1f);
         gm.selectedUnit.Attack(unit);
     }
