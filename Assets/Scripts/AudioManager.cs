@@ -33,14 +33,14 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-
+        
     }
 
     public void PlaySFX(int soundToPlay)
     {
         //soundEffects[soundToPlay].gameObject.SetActive(true);
         soundEffects[soundToPlay].Stop();
-        soundEffects[soundToPlay].pitch = Random.Range(1.3f, 1.5f);
+        soundEffects[soundToPlay].pitch = Random.Range(1.2f, 1.5f);
         soundEffects[soundToPlay].Play();
 
     }
@@ -48,6 +48,7 @@ public class AudioManager : MonoBehaviour
     {
         menuMusic.Stop();
         backgroundMusic.Stop();
+
         menuMusic.Play();
 
     }
