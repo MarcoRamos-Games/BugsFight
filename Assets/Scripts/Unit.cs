@@ -35,9 +35,15 @@ public class Unit : MonoBehaviour
     public GameObject explosionPrefab;
     Animator myAnimator;
     AudioManager myAudioManager;
+
+    [SerializeField] GameObject victoryPanel;
+    [SerializeField] GameObject buttons;
+
+    private Animator camAnim;
     // Start is called before the first frame update
     void Start()
     {
+        camAnim = Camera.main.GetComponentInParent<Animator>();
         myAnimator = GetComponent<Animator>();
         myAudioManager = FindObjectOfType<AudioManager>();
         unitBody = GetComponentInChildren<Body>();
@@ -143,7 +149,7 @@ public class Unit : MonoBehaviour
 
     private void Attack(Unit enemy)
     {
-        
+        camAnim.SetTrigger("Shake");
         hasAttacked = true;
         int enemyDamage = attackDamage - enemy.armor;
         int myDamage = enemy.defenseDamage - armor;
@@ -185,9 +191,16 @@ public class Unit : MonoBehaviour
 
         if(enemy.health <= 0)
         {
+            if (enemy.isQueen)
+            {
+                enemy.victoryPanel.SetActive(true);
+                enemy.buttons.SetActive(true);
+                //Debug.Log("Working");
+            }
             myAudioManager.PlaySFX(1);
             enemy.gameObject.SetActive(false);
-            Instantiate(explosionPrefab, new Vector3(enemy.transform.position.x, enemy.transform.position.y, -.7f), Quaternion.identity);
+            GameObject explosionPrefabGameObject =  Instantiate(explosionPrefab, new Vector3(enemy.transform.position.x, enemy.transform.position.y, -.7f), Quaternion.identity);
+            Destroy(explosionPrefabGameObject, 1f);
             GetWalkableTiles();
             gm.RemoveStatsPanel(enemy);
         }
@@ -198,8 +211,9 @@ public class Unit : MonoBehaviour
             gm.RemoveStatsPanel(this);
             gameObject.SetActive(false);
             myAudioManager.PlaySFX(1);
-            Instantiate(explosionPrefab, new Vector3(enemy.transform.position.x, enemy.transform.position.y, -.7f), Quaternion.identity);
-            
+            GameObject explosionPrefabGameObject = Instantiate(explosionPrefab, new Vector3(enemy.transform.position.x, enemy.transform.position.y, -.7f), Quaternion.identity);
+            Destroy(explosionPrefabGameObject, 1f);
+
         }
         gm.UpdateStatsPanel();
         if (selected == true)

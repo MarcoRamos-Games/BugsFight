@@ -176,14 +176,16 @@ MonoBehaviour:
   attackRange: 1
   hasAttacked: 0
   weaponIcon: {fileID: 7579686101959889026}
-  health: 15
-  attackDamage: 5
+  health: 30
+  attackDamage: 3
   defenseDamage: 2
-  armor: 1
+  armor: 2
   damageIcon: {fileID: 5770691515006594098, guid: a440523d63dcdc5478d0ba8d4233b8e9, type: 3}
   queenHealth: {fileID: 0}
   isQueen: 1
   explosionPrefab: {fileID: 6274378287200773491, guid: 855ae7d962ade4d4994a9f34e7ba0bbe, type: 3}
+  victoryPanel: {fileID: 0}
+  buttons: {fileID: 0}
 --- !u!114 &7579686102079904819
 MonoBehaviour:
   m_ObjectHideFlags: 0
